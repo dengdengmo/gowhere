@@ -1,16 +1,15 @@
 <template>
   <div class="hello">
-    <p>{{ msg }}</p>
+    <home-header></home-header>
   </div>
 </template>
 
 <script>
+import HomeHeader from './components/Header'
 export default {
   name: 'HelloWorld',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
+  components: {
+    HomeHeader
   }
 }
 </script>
