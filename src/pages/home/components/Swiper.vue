@@ -1,13 +1,13 @@
 /* eslint-disable vue/no-parsing-error */
 <template>
-  <div class="wrapper">
+  <section class="wrapper">
     <swiper :options="swiperOption">
       <swiper-slide v-for="item of swiperList" :key="item.id">
         <img class="swiper-img" :src="item.imgUrl" alt="">
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -19,7 +19,9 @@ export default {
         pagination: {
           el: '.swiper-pagination'
         },
-        loop: true
+        // loop: true,
+        // autoplayDisableOnInteraction: false,
+        autoPlay: true
       },
       swiperList: [
         {

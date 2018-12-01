@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <section class="header">
     <div class="header-left">
     返回
     </div>
@@ -9,7 +9,7 @@
     <div class="header-right">
       城市
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
