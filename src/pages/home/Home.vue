@@ -1,11 +1,11 @@
 <template>
   <div class="main-page">
-    <home-header></home-header>
-    <home-swiper></home-swiper>
-    <home-icons></home-icons>
-    <home-hotsale></home-hotsale>
-    <home-like></home-like>
-    <home-weekend></home-weekend>
+    <home-header :city="city"></home-header>
+    <home-swiper :swiperList="swiperList"></home-swiper>
+    <home-icons :iconList="iconList"></home-icons>
+    <home-hotsale :hotsaleList="hotsaleList"></home-hotsale>
+    <home-like :likeList="likeList"></home-like>
+    <home-weekend :weekendList="weekendList"></home-weekend>
     <div class="price-desc">
       <span class="price-desc-icon"></span>
       <div class="price-desc-info">
@@ -23,6 +23,7 @@ import HomeIcons from './components/Icons'
 import HomeHotsale from './components/Hotsale'
 import HomeLike from './components/Like'
 import HomeWeekend from './components/Weekend'
+import axios from 'axios'
 export default {
   name: 'HelloWorld',
   components: {
@@ -32,6 +33,38 @@ export default {
     HomeHotsale,
     HomeLike,
     HomeWeekend
+  },
+  data () {
+    return {
+      city: '',
+      hotsaleList: [],
+      likeList: [],
+      swiperList: [],
+      iconList: [],
+      weekendList: []
+    }
+  },
+  methods: {
+    getHomeInfo () {
+      axios.get('/api/index.json')
+        .then(this.getHomeInfoSucc)
+    },
+    getHomeInfoSucc (res) {
+      res = res.data
+      if (res.ret && res.data) {
+        const data = res.data
+        this.city = data.city
+        this.hotsaleList = data.hotsaleList
+        this.likeList = data.likeList
+        this.swiperList = data.swiperList
+        this.iconList = data.iconList
+        this.weekendList = data.weekendList
+      }
+      console.log(res)
+    }
+  },
+  mounted () {
+    this.getHomeInfo()
   }
 }
 </script>

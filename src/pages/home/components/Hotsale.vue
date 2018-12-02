@@ -6,69 +6,19 @@
       <a class="title-more" href="">全部榜单</a>
     </div>
     <ul class="hotsale-list">
-      <li class="hotsale-item">
-        <div class="hotsale-tag">
-          <img class="hotsale-tagimg" src="http://img1.qunarzz.com/piao/fusion/1710/ab/159673b63e6ca702.png" alt="">
+      <li class="hotsale-item" v-for="item of hotsaleList" :key="item.id">
+        <div class="hotsale-tag" v-if="item.tagImgUrl">
+          <img class="hotsale-tagimg" :src="item.tagImgUrl" alt="">
         </div>
         <div class="item-img-wrapper">
-          <img src="http://img1.qunarzz.com/sight/p0/1410/34/f540a04367d06820af4dfeaf0ad40257.water.jpg_250x250_8c3d0a3b.jpg" alt="" class="item-img">
+          <img :src="item.imgUrl" :alt="item.desc" class="item-img">
         </div>
-        <p class="hotsale-info">故宫</p>
+        <p class="hotsale-info">{{item.desc}}</p>
         <div class="hotsale-price">
           <span class="price">
-            ￥<em class="price-num">20</em>
+            ￥<em class="price-num">{{item.price}}</em>
           </span>起
         </div>
-      </li>
-      <li class="hotsale-item">
-        <div class="hotsale-tag">
-          <img class="hotsale-tagimg" src="http://img1.qunarzz.com/piao/fusion/1710/2d/36d0c4adaebbbc02.png" alt="">
-        </div>
-        <div class="item-img-wrapper">
-          <img src="http://img1.qunarzz.com/sight/p0/1410/34/f540a04367d06820af4dfeaf0ad40257.water.jpg_250x250_8c3d0a3b.jpg" alt="" class="item-img">
-        </div>
-        <p class="hotsale-info">故宫</p>
-        <div class="hotsale-price">￥20起</div>
-      </li>
-      <li class="hotsale-item">
-        <div class="hotsale-tag">
-          <img class="hotsale-tagimg" src="http://img1.qunarzz.com/piao/fusion/1710/67/edc47ffef9e96b02.png" alt="">
-        </div>
-        <div class="item-img-wrapper">
-          <img src="http://img1.qunarzz.com/sight/p0/1410/34/f540a04367d06820af4dfeaf0ad40257.water.jpg_250x250_8c3d0a3b.jpg" alt="" class="item-img">
-        </div>
-        <p class="hotsale-info">故宫</p>
-        <div class="hotsale-price">￥20起</div>
-      </li>
-      <li class="hotsale-item">
-        <!-- <div class="hotsale-tag">
-          <img src="" alt="">
-        </div> -->
-        <div class="item-img-wrapper">
-          <img src="http://img1.qunarzz.com/sight/p0/1410/34/f540a04367d06820af4dfeaf0ad40257.water.jpg_250x250_8c3d0a3b.jpg" alt="" class="item-img">
-        </div>
-        <p class="hotsale-info">故宫</p>
-        <div class="hotsale-price">￥20起</div>
-      </li>
-      <li class="hotsale-item">
-        <!-- <div class="hotsale-tag">
-          <img src="" alt="">
-        </div> -->
-        <div class="item-img-wrapper">
-          <img src="http://img1.qunarzz.com/sight/p0/1410/34/f540a04367d06820af4dfeaf0ad40257.water.jpg_250x250_8c3d0a3b.jpg" alt="" class="item-img">
-        </div>
-        <p class="hotsale-info">故宫</p>
-        <div class="hotsale-price">￥20起</div>
-      </li>
-      <li class="hotsale-item">
-        <!-- <div class="hotsale-tag">
-          <img src="" alt="">
-        </div> -->
-        <div class="item-img-wrapper">
-          <img src="http://img1.qunarzz.com/sight/p0/1410/34/f540a04367d06820af4dfeaf0ad40257.water.jpg_250x250_8c3d0a3b.jpg" alt="" class="item-img">
-        </div>
-        <p class="hotsale-info">故宫</p>
-        <div class="hotsale-price">￥20起</div>
       </li>
     </ul>
   </div>
@@ -76,7 +26,10 @@
 
 <script>
 export default {
-  name: 'HomeSale'
+  name: 'HomeSale',
+  props: {
+    hotsaleList: Array
+  }
 }
 </script>
 

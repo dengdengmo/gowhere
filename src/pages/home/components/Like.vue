@@ -5,117 +5,22 @@
       <span class="title">猜你喜欢</span>
     </div>
     <ul class="like-list">
-      <li class="like-item border-bottom">
+      <li class="like-item border-bottom" v-for="item of likeList" :key="item.id">
         <div class="like-imgcon">
-          <img src="http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg" alt="" class="like-img">
+          <img :src="item.imgUrl" :alt="item.title" class="like-img">
         </div>
         <div class="like-info">
-          <div class="like-title">故宫</div>
+          <div class="like-title">{{item.title}}</div>
           <div class="like-comment">
-            <star class="star-level" :size="24" :score="5"></star>
-            <span class="comment-num">334545条评论</span>
+            <star class="star-level" :size="24" :score="item.score"></star>
+            <span class="comment-num">{{item.commentNum}}条评论</span>
           </div>
           <div class="like-price">
             <span class="price">
-              ￥<em class="price-num">20</em>
+              ￥<em class="price-num">{{item.price}}</em>
             </span>
             起
-            <span class="like-addres">东城区</span>
-          </div>
-        </div>
-      </li>
-      <li class="like-item border-bottom">
-        <div class="like-imgcon">
-          <img src="http://img1.qunarzz.com/sight/p0/1711/53/53f7752ece875d00a3.img.jpg_200x200_5c006913.jpg" alt="" class="like-img">
-        </div>
-        <div class="like-info">
-          <div class="like-title">龙脉温泉</div>
-          <div class="like-comment">
-            <star class="star-level" :size="24" :score="4.8"></star>
-            <span class="comment-num">486条评论</span>
-          </div>
-          <div class="like-price">
-            <span class="price">
-              ￥<em class="price-num">156</em>
-            </span>
-            起
-            <span class="like-addres">昌平区</span>
-          </div>
-        </div>
-      </li>
-      <li class="like-item border-bottom">
-        <div class="like-imgcon">
-          <img src="http://img1.qunarzz.com/sight/p0/1608/5c/5c30160572493ba9a3.water.jpg_200x200_8ded77a0.jpg" alt="" class="like-img">
-        </div>
-        <div class="like-info">
-          <div class="like-title">北京乐多港奇幻乐园</div>
-          <div class="like-comment">
-            <star class="star-level" :size="24" :score="4.2"></star>
-            <span class="comment-num">857条评论</span>
-          </div>
-          <div class="like-price">
-            <span class="price">
-              ￥<em class="price-num">20</em>
-            </span>
-            起
-            <span class="like-addres">东城区</span>
-          </div>
-        </div>
-      </li>
-      <li class="like-item border-bottom">
-        <div class="like-imgcon">
-          <img src="http://img1.qunarzz.com/sight/p0/1507/36/ce3d2d6c9ab44d67ae68d940b8781829.water.jpg_200x200_0938a8f2.jpg" alt="" class="like-img">
-        </div>
-        <div class="like-info">
-          <div class="like-title">北京野生动物园</div>
-          <div class="like-comment">
-            <star class="star-level" :size="24" :score="3.6"></star>
-            <span class="comment-num">17775条评论</span>
-          </div>
-          <div class="like-price">
-            <span class="price">
-              ￥<em class="price-num">71</em>
-            </span>
-            起
-            <span class="like-addres">大兴区</span>
-          </div>
-        </div>
-      </li>
-      <li class="like-item border-bottom">
-        <div class="like-imgcon">
-          <img src="http://img1.qunarzz.com/sight/p0/1708/2b/2b3b94de99c0a425a3.img.jpg_200x200_2458ffb2.jpg" alt="" class="like-img">
-        </div>
-        <div class="like-info">
-          <div class="like-title">八达岭长城</div>
-          <div class="like-comment">
-            <star class="star-level" :size="24" :score="4.8"></star>
-            <span class="comment-num">42939条评论</span>
-          </div>
-          <div class="like-price">
-            <span class="price">
-              ￥<em class="price-num">157.5</em>
-            </span>
-            起
-            <span class="like-addres">大兴区</span>
-          </div>
-        </div>
-      </li>
-      <li class="like-item border-bottom">
-        <div class="like-imgcon">
-          <img src="http://img1.qunarzz.com/sight/p0/1508/89/895a1b7add84f23faca053ce9e3153db.water.jpg_200x200_99ae30ee.jpg" alt="" class="like-img">
-        </div>
-        <div class="like-info">
-          <div class="like-title">北京欢乐谷</div>
-          <div class="like-comment">
-            <star class="star-level" :size="24" :score="2.3"></star>
-            <span class="comment-num">65829条评论</span>
-          </div>
-          <div class="like-price">
-            <span class="price">
-              ￥<em class="price-num">157.5</em>
-            </span>
-            起
-            <span class="like-addres">大兴区</span>
+            <span class="like-address">{{item.address}}</span>
           </div>
         </div>
       </li>
@@ -128,8 +33,19 @@
 import star from '../components/star/star'
 export default {
   name: 'HomeLike',
+  props: {
+    likeList: Array
+  },
   components: {
     star
+  },
+  methods: {
+    test () {
+      console.log(this.likeList)
+    }
+  },
+  mounted () {
+    this.test()
   }
 }
 </script>
@@ -194,7 +110,7 @@ export default {
             color $priceColor
             .price-num
               font-size .4rem
-          .like-addres
+          .like-address
             position absolute
             right .24rem
     .like-more
