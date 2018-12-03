@@ -6,9 +6,11 @@
     <div class="header-input">
       输入城市/经典/游玩主题
     </div>
-    <div class="header-right">
-      {{this.city}}
-    </div>
+    <router-link to="/city">
+      <div class="header-right">
+        {{this.city}}
+      </div>
+    </router-link>
   </section>
 </template>
 
@@ -44,4 +46,5 @@ export default {
       width: 1.24rem
       float: right
       text-align: center
+      color #fff
 </style>
