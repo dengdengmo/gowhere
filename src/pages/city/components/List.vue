@@ -19,7 +19,10 @@
           </li>
         </ul>
       </section>
-      <section class="area" v-for="(item, index) of cities" :key="index">
+      <section class="area"
+       v-for="(item, index) of cities"
+       :key="index"
+       :ref="index">
         <div class="top">
           <h2>{{index}}</h2>
         </div>
@@ -39,10 +42,19 @@ export default {
   name: 'CityList',
   props: {
     cities: Object,
-    hotCities: Array
+    hotCities: Array,
+    letter: String
   },
   mounted () {
     this.scroll = new BScroll(this.$refs.wrapper)
+  },
+  watch: {
+    letter () {
+      if (this.letter) {
+        const element = this.$refs[this.letter][0]
+        this.scroll.scrollToElement(element)
+      }
+    }
   }
 }
 </script>
