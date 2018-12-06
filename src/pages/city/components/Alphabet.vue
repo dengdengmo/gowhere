@@ -17,9 +17,7 @@
 export default {
   name: 'CityAlphabet',
   props: {
-    cities: Object,
-    startY: 0,
-    timer: null
+    cities: Object
   },
   computed: {
     letters () {
@@ -32,7 +30,9 @@ export default {
   },
   data () {
     return {
-      touchStatus: false
+      touchStatus: false,
+      timer: null,
+      startY: 0
     }
   },
   methods: {
@@ -71,7 +71,7 @@ export default {
   display flex
   flex-direction column
   justify-content center
-  position fixed
+  position absolute
   top 1.58rem
   right 0
   bottom 0
