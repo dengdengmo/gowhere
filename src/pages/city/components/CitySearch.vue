@@ -5,7 +5,9 @@
     </div>
     <div class="search-content" v-show="keyword">
       <ul class="search-list">
-        <li class="search-item border-bottom" v-for="item of list" :key="item.id">
+        <li class="search-item border-bottom"
+         v-for="item of list" :key="item.id"
+         @click="handleChangeCity(item.name)">
           {{item.name}}
         </li>
         <li class="search-item border-bottom" v-show="!this.hasData">
@@ -17,6 +19,7 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 export default {
   name: 'CitySearch',
   props: {
@@ -33,6 +36,13 @@ export default {
     hasData () {
       return this.list.length
     }
+  },
+  methods: {
+    handleChangeCity (city) {
+      this.changeCity(city)
+      this.$router.push('/')
+    },
+    ...mapMutations(['changeCity'])
   },
   watch: {
     keyword () {

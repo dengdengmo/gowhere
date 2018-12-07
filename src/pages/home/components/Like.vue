@@ -38,14 +38,6 @@ export default {
   },
   components: {
     star
-  },
-  methods: {
-    test () {
-      console.log(this.likeList)
-    }
-  },
-  mounted () {
-    this.test()
   }
 }
 </script>
