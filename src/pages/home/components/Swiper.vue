@@ -23,10 +23,9 @@ export default {
           el: '.swiper-pagination'
         },
         loop: true,
-        // observer: true,
-        // observeParents: true,
-        // autoplayDisableOnInteraction: false,
-        autoPlay: 1000
+        observer: true,
+        observeParents: true,
+        autoplay: true
       }
     }
   },
