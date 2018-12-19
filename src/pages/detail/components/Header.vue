@@ -72,6 +72,7 @@ export default {
       line-height $headerHeight
       background-color $bgColor
       color #fff
+      z-index 99
       .detail-back-left
         position absolute
         top 0
