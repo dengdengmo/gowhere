@@ -2,7 +2,7 @@
   <div class="comment-item border-top">
     <div class="comment-stardate">
       <star class="comment-star" :size="24" :score="5"></star>
-      <span class="comment-date">1998&nbsp;&nbsp;&nbsp;你好</span>
+      <span class="comment-date">v**z&nbsp;&nbsp;&nbsp;2018-09-05</span>
     </div>
     <!--使用三元运算判断-->
     <p class="comment-content" :style="auto ? fold: unfold">参观故宫是来京必须要安排的行程，紫禁城的宏伟和惊艳超乎你想象，假装自己穿越时空，你走在乾隆皇帝走过的石板砖上，体验当年盛世的文化底蕴和奢华的生活～ 攻略1 提前网上购买门票，凭身份证直接进 攻略2 租讲解器，每个讲解器都是感应的，每个只讲解一遍，只有一个耳机，别想着两人共用的好事儿，哈哈哈 攻略3 周一闭馆，周末人居多，尽量安排工作日，若所有宫殿都想参观，就提早进去，不过我个人觉得没必要，参观代表性的中轴和个别妃子和慈禧的宫殿即可，建议预留至少大半天时间在里头 再来北京，还愿意去故宫~~～</p>
@@ -95,7 +95,7 @@ export default {
       position relative
       display inline-block
       // width 1.5rem
-      top .16rem
+      top .14rem
       >>> .star-item
         width 12px
         height 12px
@@ -108,8 +108,6 @@ export default {
       height .28rem
       line-height .28rem
       font-size .24rem
-      color #212121
-      vertical-align center
   .comment-content
     overflow hidden
     height 105px
