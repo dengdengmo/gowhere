@@ -5,8 +5,11 @@
     </h3>
     <ticket-list></ticket-list>
     <ticket-list></ticket-list>
-    <div class="more-btn border-bottom">
-      查看剩余产品<span class="ticket-group-icon"></span>
+    <div class="more-btn border-bottom" @click="extendMore" v-show="hideTicket">
+      查看剩余产品
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-jiantou-xia"></use>
+      </svg>
     </div>
   </div>
 </template>
@@ -15,8 +18,18 @@
 import ticketList from './TicketList'
 export default {
   name: 'TicketGroup',
+  data () {
+    return {
+      hideTicket: true
+    }
+  },
   components: {
     ticketList
+  },
+  methods: {
+    extendMore () {
+      this.hideTicket = false
+    }
   }
 }
 </script>

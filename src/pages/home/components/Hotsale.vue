@@ -3,7 +3,11 @@
     <div class="group-title">
       <img class="title-img" src="http://img1.qunarzz.com/piao/fusion/1711/16/bfbb9874e8f11402.png" alt="">
       <span class="title">本周热门榜单</span> <!--这个元素与上一个元素之间有一个空格-->
-      <a class="title-more" href="">全部榜单</a>
+      <a class="title-more" href="">
+        全部榜单<svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-more"></use>
+        </svg>
+        </a>
     </div>
     <ul class="hotsale-list">
       <li class="hotsale-item" v-for="item of hotsaleList" :key="item.id">
@@ -53,6 +57,8 @@ export default {
       font-size .28rem
       color #616161
       line-height .28rem
+      .icon
+        font-size .35rem
   .hotsale-list
     display: flex
     overflow-x: scroll

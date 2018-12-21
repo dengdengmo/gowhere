@@ -6,7 +6,9 @@
       </div>
       <div class="banner-info">
         <div class="imgswiper">
-          <span class="imgswiper-icon"></span>
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-tupian"></use>
+          </svg>
           <em class="imgswiper-num">10</em>
         </div>
         <div class="banner-title">故宫(AAAAA景区)</div>

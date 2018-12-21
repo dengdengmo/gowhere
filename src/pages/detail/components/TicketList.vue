@@ -1,11 +1,14 @@
 <template>
   <div class="ticket-list border-bottom">
-    <div class="ticket-list-info">
-      <h5 class="ticket-name" @click="toggleTicketItem">上午场</h5>
+    <div class="ticket-list-info" @click="toggleTicketItem">
+      <h5 class="ticket-name">上午场</h5>
       <div class="ticket-price">
         ￥<em class="price-num">40</em><span class="price-numword">起</span>
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-jiantou-xia" v-show="!showTicket"></use>
+          <use xlink:href="#icon-jiantou-shang" v-show="showTicket"></use>
+        </svg>
       </div>
-      <span class="ticketList-icon"></span>
     </div>
     <ticket-item v-show="showTicket"></ticket-item>
     <ticket-item v-show="showTicket"></ticket-item>
@@ -51,7 +54,7 @@ export default {
       position absolute
       top 50%
       margin-top -.28rem
-      right .46rem
+      right .26rem
       height .4rem
       line-height .4rem
       font-size .24rem
@@ -60,7 +63,13 @@ export default {
         font-size .4rem
         margin-left .04rem
       .price-numword
+        display inline-block
+        font-size .24rem
         color #9e9e9e
+        transform scale(.8)
+      .icon
+        color #9e9e9e
+        font-size .3rem
   .ticket-item
     padding .2rem
     background #f5f5f5

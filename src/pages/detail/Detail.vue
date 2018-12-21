@@ -18,7 +18,7 @@
       <ticket-group id="anchor_4" data-anchor="4"></ticket-group>
     </div>
     <detail-comment></detail-comment>
-    <div class="content"></div>
+    <detail-recommend></detail-recommend>
   </div>
 </template>
 
@@ -30,6 +30,7 @@ import detailPromote from './components/Promote'
 import ticketGroup from './components/TicketGroup'
 import ticketTab from './components/TicketTab'
 import detailComment from './components/Comment'
+import detailRecommend from './components/Recommend'
 export default {
   name: 'Detail',
   components: {
@@ -39,7 +40,8 @@ export default {
     detailPromote,
     ticketGroup,
     ticketTab,
-    detailComment
+    detailComment,
+    detailRecommend
   },
   methods: {
   }
@@ -49,6 +51,4 @@ export default {
 <style lang="stylus" scoped>
 .main-page
   background #f5f5f5
-  .content
-    height 50rem
 </style>

@@ -1,14 +1,21 @@
 <template>
   <section class="header">
     <div class="header-left">
-    返回
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-fanhui"></use>
+      </svg>
     </div>
     <div class="header-input">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-sousuo"></use>
+      </svg>
       输入城市/经典/游玩主题
     </div>
     <router-link to="/city">
       <div class="header-right">
-        {{this.city}}
+        {{this.city}}<svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-xiajiantou"></use>
+        </svg>
       </div>
     </router-link>
   </section>
@@ -34,6 +41,11 @@ export default {
     .header-left
       width: .64rem
       float: left
+      text-align center
+      .icon
+        color #fff
+        font-size .5rem
+        vertical-align -.17rem
     .header-input
       background: #ffffff
       border-radius: .1rem
@@ -42,7 +54,11 @@ export default {
       height: .64rem
       line-height: .64rem
       margin-left: .2rem
-      color: #ccc
+      color: #e4e7ea
+      .icon
+        font-size .33rem
+        margin-left .2rem
+        vertical-align -.05rem
     .header-right
       min-width: 1.04rem
       padding 0 .1rem

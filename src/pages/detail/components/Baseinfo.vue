@@ -7,10 +7,12 @@
           <span class="comment-text">分</span>
           <span class="comment-desc">超赞</span>
         </div>
-        <div>
-          <span class="comment-num">337423条评论</span>
-          <span class="comment-num">90条攻略</span>
-          <span class="comment-icon"></span>
+        <div class="comment-num">
+          <span class="num">337423条评论</span>
+          <span class="num">90条攻略</span>
+          <svg class="icon icon-left" aria-hidden="true">
+            <use xlink:href="#icon-more"></use>
+          </svg>
         </div>
       </div>
       <div class="flex-item border-left">
@@ -20,13 +22,20 @@
         <div>
           <span class="sight-card-text">开放时间、贴士</span> <!--不放在span标签里就会有一个像素的高度差 -->
         </div>
+        <svg class="icon icon-right" aria-hidden="true">
+          <use xlink:href="#icon-more"></use>
+        </svg>
       </div>
     </div>
     <div class="sight-address">
       <p>
-        <span class="sight-address-icon"></span>
+        <svg class="icon icon-left" aria-hidden="true">
+          <use xlink:href="#icon-tishi"></use>
+        </svg>
         <span class="sight-address-text">北京市东城区景山前街4号</span>
-        <span class="sight-address-arrow"></span>
+        <svg class="icon icon-right" aria-hidden="true">
+          <use xlink:href="#icon-more"></use>
+        </svg>
       </p>
     </div>
   </div>
@@ -70,9 +79,22 @@ export default {
           line-height .48rem
           margin-left .2rem
       .comment-num
-        font-size .24rem
+        .num
+          font-size .24rem
+          color #9e9e9e
+          margin-right .2rem
+        .icon-left
+          position absolute
+          top .2rem
+          right .1rem
+          color #9e9e9e
+          font-size .4rem
+      .icon-right
+        position absolute
+        top .2rem
+        right 0
         color #9e9e9e
-        margin-right .2rem
+        font-size .4rem
       .sight-card-title
         font-size .28rem
         color #212121
@@ -90,4 +112,15 @@ export default {
     p
       padding 0 .56rem
       position relative
+      .icon-left
+        position absolute
+        left 0
+        color #9e9e9e
+        font-size .36rem
+      .icon-right
+        position absolute
+        right 0
+        color #9e9e9e
+        font-size .4rem
+
 </style>

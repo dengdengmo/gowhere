@@ -6,7 +6,9 @@
       <comment-item></comment-item>
     </div>
     <div class="comment-more border-top">
-      查看全部评论<span class="more-icon">?</span>
+      查看全部评论<svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-more"></use>
+      </svg>
     </div>
   </div>
 </template>
@@ -49,8 +51,8 @@ export default {
     line-height .8rem
     background #fff
     text-align center
-    .more-icon
-      margin-left .1rem
-      font-size .2rem
+    .icon
+      margin-left .05rem
+      font-size .3rem
       color #616161
 </style>

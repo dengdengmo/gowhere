@@ -4,7 +4,7 @@
     <home-swiper :swiperList="swiperList"></home-swiper>
     <home-icons :iconList="iconList"></home-icons>
     <home-hotsale :hotsaleList="hotsaleList"></home-hotsale>
-    <home-like :likeList="likeList"></home-like>
+    <home-recommend :likeList="recommendList"></home-recommend>
     <home-weekend :weekendList="weekendList"></home-weekend>
     <div class="price-desc">
       <span class="price-desc-icon"></span>
@@ -21,7 +21,7 @@ import HomeHeader from './components/Header'
 import HomeSwiper from './components/Swiper'
 import HomeIcons from './components/Icons'
 import HomeHotsale from './components/Hotsale'
-import HomeLike from './components/Like'
+import HomeRecommend from './components/Recommend'
 import HomeWeekend from './components/Weekend'
 import axios from 'axios'
 import { mapState } from 'vuex'
@@ -32,13 +32,13 @@ export default {
     HomeSwiper,
     HomeIcons,
     HomeHotsale,
-    HomeLike,
+    HomeRecommend,
     HomeWeekend
   },
   data () {
     return {
       hotsaleList: [],
-      likeList: [],
+      recommendList: [],
       swiperList: [],
       iconList: [],
       weekendList: [],
@@ -58,10 +58,11 @@ export default {
       if (res.ret && res.data) {
         const data = res.data
         this.hotsaleList = data.hotsaleList
-        this.likeList = data.likeList
+        this.recommendList = data.recommendList
         this.swiperList = data.swiperList
         this.iconList = data.iconList
         this.weekendList = data.weekendList
+        sessionStorage.recommendList = JSON.stringify(data.recommendList)
       }
     }
   },

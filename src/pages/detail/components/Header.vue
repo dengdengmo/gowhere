@@ -2,11 +2,18 @@
   <header>
     <router-link class="detail-back"
      tag="div" to="/" v-show="!showHeader">
-      <div class="detail-back-icon">?</div>
+      <div class="detail-back-icon">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-fanhui"></use>
+        </svg>
+      </div>
     </router-link>
     <div class="detail-header" v-show="showHeader" :style="opacityStyle">
       <router-link class="detail-back-left"
-       tag="span" to="/">?
+       tag="span" to="/">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-fanhui"></use>
+        </svg>
       </router-link>
       <p class="detail-header-title">故宫</p>
     </div>
@@ -27,7 +34,6 @@ export default {
   methods: {
     handleShowHeader () {
       const top = document.documentElement.scrollTop || window.pageYOffset
-      // alert(top)
       if (top > 20) {
         let opacity = top / 140
         this.opacityStyle = { opacity }
@@ -64,6 +70,10 @@ export default {
       text-align center
       .detail-back-icon
         color #fff
+        // text-align center
+        .icon
+          font-size .45rem
+          vertical-align -.12rem
     .detail-header
       position fixed
       top 0
@@ -82,6 +92,9 @@ export default {
         height .8rem
         font-size .36rem
         text-align center
+        .icon
+          font-size .5rem
+          vertical-align -.13rem
       .detail-header-title
         margin 0 .8rem
         font-size .32rem

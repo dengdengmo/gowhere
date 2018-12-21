@@ -1,6 +1,10 @@
 <template>
   <div class="header">
-    <a href="" class="backIcon">?</a>
+    <a href="" class="backIcon">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-fanhui"></use>
+      </svg>
+    </a>
     <div class="header-title">城市选择</div>
   </div>
 </template>
@@ -27,6 +31,9 @@ export default {
     font-size .36rem
     text-align center
     color #fff
+    .icon
+      font-size .5rem
+      vertical-align -.1rem
   .header-title
     margin 0 1rem
     line-height .88rem
