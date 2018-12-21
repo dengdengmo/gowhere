@@ -33,7 +33,7 @@ export default {
   methods: {
     fixTab () {
       // eslint-disable-next-line one-var
-      const scrollTop = document.documentElement.scrollTop
+      const scrollTop = document.documentElement.scrollTop || window.pageYOffset
       if (scrollTop >= this.top && scrollTop < this.height) {
         this.fixed = true
       } else {

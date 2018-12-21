@@ -1,7 +1,7 @@
 <template>
   <ul class="list"
    @click="handleLetterClick"
-   @touchstart="handleTouchStart"
+   @touchstart.prevent="handleTouchStart"
    @touchmove="handleTouchMove"
    @touchend="handleTouchEnd">
     <li class="item"

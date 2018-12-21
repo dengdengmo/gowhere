@@ -42,7 +42,7 @@ export default {
 .gallery >>> .swiper-container
   overflow inherit
 .gallery
-  position absolute
+  position fixed
   display flex
   flex-direction column
   justify-content center
@@ -62,5 +62,4 @@ export default {
     .swiper-pagination
       color #fff
       bottom -4rem
-      // z-index 100
 </style>

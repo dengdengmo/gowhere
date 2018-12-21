@@ -26,7 +26,8 @@ export default {
   },
   methods: {
     handleShowHeader () {
-      const top = document.documentElement.scrollTop
+      const top = document.documentElement.scrollTop || window.pageYOffset
+      // alert(top)
       if (top > 20) {
         let opacity = top / 140
         this.opacityStyle = { opacity }

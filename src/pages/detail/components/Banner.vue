@@ -13,7 +13,8 @@
       </div>
     </div>
     <common-gallery :imgs="imgs"
-     v-show="showGallery" @closeGallery="toggleGallery"></common-gallery>
+     v-show="showGallery" @closeGallery="toggleGallery">
+    </common-gallery>
   </div>
 </template>
 

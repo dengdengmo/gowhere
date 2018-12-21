@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import star from '../components/star/star'
+import star from 'common/star/star'
 export default {
   name: 'HomeLike',
   props: {

@@ -17,6 +17,7 @@
       <ticket-group></ticket-group>
       <ticket-group id="anchor_4" data-anchor="4"></ticket-group>
     </div>
+    <detail-comment></detail-comment>
     <div class="content"></div>
   </div>
 </template>
@@ -28,6 +29,7 @@ import detailBaseinfo from './components/Baseinfo'
 import detailPromote from './components/Promote'
 import ticketGroup from './components/TicketGroup'
 import ticketTab from './components/TicketTab'
+import detailComment from './components/Comment'
 export default {
   name: 'Detail',
   components: {
@@ -36,7 +38,8 @@ export default {
     detailBaseinfo,
     detailPromote,
     ticketGroup,
-    ticketTab
+    ticketTab,
+    detailComment
   },
   methods: {
   }
