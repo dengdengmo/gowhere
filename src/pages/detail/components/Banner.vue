@@ -14,18 +14,22 @@
         <div class="banner-title">故宫(AAAAA景区)</div>
       </div>
     </div>
-    <common-gallery :imgs="imgs"
-     v-show="showGallery" @closeGallery="toggleGallery">
-    </common-gallery>
+    <fade-animation>
+      <common-gallery :imgs="imgs"
+       v-show="showGallery" @closeGallery="toggleGallery">
+      </common-gallery>
+    </fade-animation>
   </div>
 </template>
 
 <script>
 import CommonGallery from 'common/gallery/Gallery'
+import FadeAnimation from 'common/Fade'
 export default {
   name: 'DetailBanner',
   components: {
-    CommonGallery
+    CommonGallery,
+    FadeAnimation
   },
   data () {
     return {

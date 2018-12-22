@@ -12,42 +12,25 @@
         <use xlink:href="#icon-jiantou-shang" v-show="auto"></use>
       </svg>
     </div>
-    <div class="comment-imgs" @click="toggleGallery">
-      <div class="comment-imgouter">
+    <ul class="comment-imgs" @click="toggleGallery">
+      <li class="comment-imgouter" v-for="(item, index) of imgs" :key="index">
         <div class="comment-imginner">
-          <img class="comment-img" src="https://imgs.qunarzz.com/piao/fusion/1811/d6/fd836aeebb7d1b02.jpg_228x168_4da11645.jpg">
+          <img class="comment-img" :src="item">
         </div>
-      </div>
-      <div class="comment-imgouter">
-        <div class="comment-imginner">
-          <img class="comment-img" src="https://imgs.qunarzz.com/piao/fusion/1811/d6/fd836aeebb7d1b02.jpg_228x168_4da11645.jpg">
-        </div>
-      </div>
-      <div class="comment-imgouter">
-        <div class="comment-imginner">
-          <img class="comment-img" src="https://imgs.qunarzz.com/piao/fusion/1811/d6/fd836aeebb7d1b02.jpg_228x168_4da11645.jpg">
-        </div>
-      </div>
-      <div class="comment-imgouter">
-        <div class="comment-imginner">
-          <img class="comment-img" src="https://imgs.qunarzz.com/piao/fusion/1811/d6/fd836aeebb7d1b02.jpg_228x168_4da11645.jpg">
-        </div>
-      </div>
-      <div class="comment-imgouter">
-        <div class="comment-imginner">
-          <img class="comment-img" src="https://imgs.qunarzz.com/piao/fusion/1811/d6/fd836aeebb7d1b02.jpg_228x168_4da11645.jpg">
-        </div>
-      </div>
-    </div>
-    <common-gallery :imgs="imgs"
-     v-show="showGallery" @closeGallery="toggleGallery">
-    </common-gallery>
+      </li>
+    </ul>
+    <fade-animation>
+      <common-gallery :imgs="imgs"
+      v-show="showGallery" @closeGallery="toggleGallery">
+      </common-gallery>
+    </fade-animation>
   </div>
 </template>
 
 <script>
 import CommonGallery from 'common/gallery/Gallery'
 import star from 'common/star/star'
+import FadeAnimation from 'common/Fade'
 export default {
   name: 'CommentItem',
   data () {
@@ -80,7 +63,8 @@ export default {
   },
   components: {
     star,
-    CommonGallery
+    CommonGallery,
+    FadeAnimation
   }
 }
 </script>
