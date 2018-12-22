@@ -19,7 +19,7 @@
     </div>
     <detail-comment></detail-comment>
     <detail-recommend></detail-recommend>
-    <qunar-footer></qunar-footer>
+    <!-- <qunar-footer></qunar-footer> -->
   </div>
 </template>
 
