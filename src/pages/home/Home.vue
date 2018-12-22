@@ -7,12 +7,15 @@
     <home-recommend :likeList="recommendList"></home-recommend>
     <home-weekend :weekendList="weekendList"></home-weekend>
     <div class="price-desc">
-      <span class="price-desc-icon"></span>
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-tishi"></use>
+      </svg>
       <div class="price-desc-info">
         <span class="price-desc-highlight">票面价</span>
         是指通过景区指定窗口售卖的纸质门票上标注的价格
       </div>
     </div>
+    <qunar-footer></qunar-footer>
   </div>
 </template>
 
@@ -23,6 +26,7 @@ import HomeIcons from './components/Icons'
 import HomeHotsale from './components/Hotsale'
 import HomeRecommend from './components/Recommend'
 import HomeWeekend from './components/Weekend'
+import QunarFooter from 'common/Footer'
 import axios from 'axios'
 import { mapState } from 'vuex'
 export default {
@@ -33,7 +37,8 @@ export default {
     HomeIcons,
     HomeHotsale,
     HomeRecommend,
-    HomeWeekend
+    HomeWeekend,
+    QunarFooter
   },
   data () {
     return {
@@ -84,12 +89,18 @@ export default {
 .main-page
   background-color #f5f5f5
   .price-desc
+    position relative
     margin-top .1rem
     padding .14rem .1rem
     font-size .24rem
     line-height .32rem
     background #ffffff
     color #616161
+    .icon
+      position absolute
+      left 6px
+      bottom 10px
+      color #ccc
     .price-desc-info
       margin-left .3rem
       .price-desc-highlight

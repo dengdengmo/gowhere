@@ -19,6 +19,7 @@
     </div>
     <detail-comment></detail-comment>
     <detail-recommend></detail-recommend>
+    <qunar-footer></qunar-footer>
   </div>
 </template>
 
@@ -31,6 +32,7 @@ import ticketGroup from './components/TicketGroup'
 import ticketTab from './components/TicketTab'
 import detailComment from './components/Comment'
 import detailRecommend from './components/Recommend'
+import QunarFooter from 'common/Footer'
 export default {
   name: 'Detail',
   components: {
@@ -41,7 +43,8 @@ export default {
     ticketGroup,
     ticketTab,
     detailComment,
-    detailRecommend
+    detailRecommend,
+    QunarFooter
   },
   methods: {
   }
