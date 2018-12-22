@@ -54,4 +54,6 @@ export default {
 <style lang="stylus" scoped>
 .main-page
   background #f5f5f5
+  .ticket-container
+    overflow hidden
 </style>

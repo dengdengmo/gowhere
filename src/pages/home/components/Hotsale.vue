@@ -10,7 +10,8 @@
         </a>
     </div>
     <ul class="hotsale-list">
-      <li class="hotsale-item" v-for="item of hotsaleList" :key="item.id">
+      <router-link tag="li" :to="'/detail/' + item.id"
+       class="hotsale-item" v-for="item of hotsaleList" :key="item.id">
         <div class="hotsale-tag" v-if="item.tagImgUrl">
           <img class="hotsale-tagimg" :src="item.tagImgUrl" alt="">
         </div>
@@ -23,7 +24,7 @@
             ￥<em class="price-num">{{item.price}}</em>
           </span>起
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>

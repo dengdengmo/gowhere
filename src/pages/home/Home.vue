@@ -98,8 +98,8 @@ export default {
     color #616161
     .icon
       position absolute
-      left 6px
-      bottom 10px
+      top 8.5px
+      left 5px
       color #ccc
     .price-desc-info
       margin-left .3rem
